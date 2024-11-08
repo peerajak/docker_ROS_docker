@@ -101,6 +101,15 @@ docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --gpus all o
 xhost +local:root
 docker run -it --net=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --gpus all turtlebot3_base:latest bash
 ```
+inside docker run
+
+```
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
+```
+
+to see the image below
+
+![alt text](docker_gazebo.png)
 
 # Ros package inside docker
 tb3_navigation package
