@@ -83,7 +83,7 @@ Test with non-sudo version
 ```
 docker run --rm -it --name gimp -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:ro --runtime=nvidia --gpus all gimp:0.1
 ```
-
+You should see GIMP drawing app appears on your linux screen.
 
 # Rviz only
 
