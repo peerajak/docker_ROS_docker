@@ -97,6 +97,20 @@ docker run -it -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --gpus all o
 
 # Turtlebot on Rviz
 
+Build docker by multiple stage as shown in image
+
+![alt text](multi-stage-build.png)
+
+```
+cd nvidia_ros
+docker build -f dockerfile_nvidia_ros -t nvidia_ros .
+```
+
+```
+cd docker_ros_test
+docker build -f dockerfile_tb3 -t turtlebot3_base .
+```
+
 ```
 xhost +local:root
 docker run -it --net=host -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --gpus all turtlebot3_base:latest bash
